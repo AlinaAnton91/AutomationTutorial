@@ -1,13 +1,12 @@
 package tests;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class AlertTest {
+public class FrameTest {
     public WebDriver driver;
 
     @Test
@@ -20,16 +19,18 @@ public class AlertTest {
         WebElement alertsFrameWindowMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
         alertsFrameWindowMenu.click();
 
-        WebElement alertsSubMenu = driver.findElement(By.xpath("//span[text()='Alerts']"));
-        alertsSubMenu.click();
+        WebElement framesSubMenu = driver.findElement(By.xpath("//span[text()='Frames']"));
+        framesSubMenu.click();
 
-        WebElement alertOkElement = driver.findElement(By.id("alertButton"));
-        alertOkElement.click();
-        Alert alertOk = driver.switchTo().alert();
-        alertOk.accept();
+        driver.switchTo().frame("frame1");
+        WebElement iframeMessage = driver.findElement(By.id("sampleHeading"));
+        System.out.println(iframeMessage.getText());
 
-        WebElement alertConfirmElement = driver.findElement(By.id("confirmButton"));
-        Alert alertConfirm = driver.switchTo().alert();
-        alertConfirm.dismiss();
+        driver.switchTo().parentFrame();
+        driver.switchTo().frame("frame2");
+        iframeMessage = driver.findElement(By.id("sampleHeading"));
+        System.out.println(iframeMessage.getText());
+
+
     }
 }

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class WebTableTest {
 
     public WebDriver driver;
@@ -16,10 +18,16 @@ public class WebTableTest {
         driver=new ChromeDriver();
 
         //Accesam un URL
-        driver.get("https://demoqa.com/webtables");
+        driver.get("https://demoqa.com");
 
         //Facem browser-ul maximize
         driver.manage().window().maximize();
+
+        WebElement elementsMenu = driver.findElement(By.xpath("//h5[text()='Elements']"));
+        elementsMenu.click();
+
+        WebElement webTablesDubMenu = driver.findElement(By.xpath("//span[text()='Web Tables']"));
+        webTablesDubMenu.click();
 
         WebElement addElement=driver.findElement(By.id("addNewRecordButton"));
         addElement.click();
@@ -52,47 +60,50 @@ public class WebTableTest {
         WebElement submitElement= driver.findElement(By.id("submit"));
         submitElement.click();
 
-        WebElement editElement=driver.findElement(By.cssSelector("span[id='edit-record-4']"));
-        editElement.click();
+//        WebElement editElement=driver.findElement(By.cssSelector("span[id='edit-record-4']"));
+//        editElement.click();
+//
+//        WebElement editFirstNameElement=driver.findElement(By.cssSelector("input[placeholder='First Name']"));
+//        String editFirstNameValue="Daniela";
+//        editFirstNameElement.clear();
+//        editFirstNameElement.sendKeys(editFirstNameValue);
+//
+//        WebElement editLastNameElement=driver.findElement(By.cssSelector("input[placeholder='Last Name']"));
+//        String editLastNameElementValue="Peter";
+//        editLastNameElement.clear();
+//        editLastNameElement.sendKeys(editLastNameElementValue);
+//
+//        WebElement editEmailAddressElement=driver.findElement(By.cssSelector("input[placeholder='name@example.com']"));
+//        String editEmailAddressValue="daniela.peter@test.co.uk";
+//        editEmailAddressElement.clear();
+//        editEmailAddressElement.sendKeys(editEmailAddressValue);
+//
+//        WebElement editAgeElement=driver.findElement(By.cssSelector("input[placeholder='Age']"));
+//        String editAgeValue="26";
+//        editAgeElement.clear();
+//        editAgeElement.sendKeys(editAgeValue);
+//
+//        WebElement editSalaryElement=driver.findElement(By.cssSelector("input[placeholder='Salary']"));
+//        String editSalaryValue="4500";
+//        editSalaryElement.clear();
+//        editSalaryElement.sendKeys(editSalaryValue);
+//
+//        WebElement editDepartmentElement=driver.findElement(By.cssSelector("input[placeholder='Department']"));
+//        String editDepartmentValue="Finance";
+//        editDepartmentElement.clear();
+//        editDepartmentElement.sendKeys(editDepartmentValue);
+//
+//        WebElement editSubmitElement= driver.findElement(By.id("submit"));
+//        editSubmitElement.click();
 
-        WebElement editFirstNameElement=driver.findElement(By.cssSelector("input[placeholder='First Name']"));
-        String editFirstNameValue="Daniela";
-        editFirstNameElement.clear();
-        editFirstNameElement.sendKeys(editFirstNameValue);
-
-        WebElement editLastNameElement=driver.findElement(By.cssSelector("input[placeholder='Last Name']"));
-        String editLastNameElementValue="Peter";
-        editLastNameElement.clear();
-        editLastNameElement.sendKeys(editLastNameElementValue);
-
-        WebElement editEmailAddressElement=driver.findElement(By.cssSelector("input[placeholder='name@example.com']"));
-        String editEmailAddressValue="daniela.peter@test.co.uk";
-        editEmailAddressElement.clear();
-        editEmailAddressElement.sendKeys(editEmailAddressValue);
-
-        WebElement editAgeElement=driver.findElement(By.cssSelector("input[placeholder='Age']"));
-        String editAgeValue="26";
-        editAgeElement.clear();
-        editAgeElement.sendKeys(editAgeValue);
-
-        WebElement editSalaryElement=driver.findElement(By.cssSelector("input[placeholder='Salary']"));
-        String editSalaryValue="4500";
-        editSalaryElement.clear();
-        editSalaryElement.sendKeys(editSalaryValue);
-
-        WebElement editDepartmentElement=driver.findElement(By.cssSelector("input[placeholder='Department']"));
-        String editDepartmentValue="Finance";
-        editDepartmentElement.clear();
-        editDepartmentElement.sendKeys(editDepartmentValue);
-
-        WebElement editSubmitElement= driver.findElement(By.id("submit"));
-        editSubmitElement.click();
-
-        WebElement searchElement=driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
-        searchElement.sendKeys(editFirstNameValue);
+//        WebElement searchElement=driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
+//        searchElement.sendKeys(editFirstNameValue);
 
         //WebElement deleteButtonElement=driver.findElement(By.cssSelector("span[id='delete-record-4']"));
         //deleteButtonElement.click();
+
+        List<WebElement> tableRowsElement = driver.findElements(By.cssSelector("div[class='rt-tr-group']"));
+
 
     }
 
