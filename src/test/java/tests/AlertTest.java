@@ -38,5 +38,7 @@ public class AlertTest {
         Alert alertPrompt = driver.switchTo().alert();
         alertPrompt.sendKeys("EU");
         alertPrompt.accept();
+
+        driver.quit();
     }
 }
