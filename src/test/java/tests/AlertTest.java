@@ -29,7 +29,14 @@ public class AlertTest {
         alertOk.accept();
 
         WebElement alertConfirmElement = driver.findElement(By.id("confirmButton"));
+        alertConfirmElement.click();
         Alert alertConfirm = driver.switchTo().alert();
         alertConfirm.dismiss();
+
+        WebElement alertPromptElement = driver.findElement(By.id("promtButton"));
+        alertPromptElement.click();
+        Alert alertPrompt = driver.switchTo().alert();
+        alertPrompt.sendKeys("EU");
+        alertPrompt.accept();
     }
 }
