@@ -1,28 +1,16 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import sharedData.SharedData;
 
 import java.util.List;
 
-public class WebTableTest {
-
-    public WebDriver driver;
+public class WebTableTest extends SharedData {
 
     @Test
     public void testMethod() {
-        //Deschidem un browser
-        driver=new ChromeDriver();
-
-        //Accesam un URL
-        driver.get("https://demoqa.com");
-
-        //Facem browser-ul maximize
-        driver.manage().window().maximize();
-
         WebElement elementsMenu = driver.findElement(By.xpath("//h5[text()='Elements']"));
         elementsMenu.click();
 

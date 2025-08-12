@@ -1,23 +1,17 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import sharedData.SharedData;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabWindowTest {
-    public WebDriver driver;
+public class TabWindowTest extends SharedData {
 
     @Test
     public void testMethod() {
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
-
         WebElement alertsFrameWindowMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
         alertsFrameWindowMenu.click();
 
@@ -49,8 +43,6 @@ public class TabWindowTest {
 
         driver.switchTo().window(windowsList.get(0));
         System.out.println(driver.getCurrentUrl());
-
-
 
 
 

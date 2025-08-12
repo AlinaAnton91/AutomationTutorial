@@ -4,26 +4,16 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sharedData.SharedData;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-public class PracticeFormTest {
-
-    public WebDriver driver;
+public class PracticeFormTest extends SharedData {
 
     @Test
     public void metodaTest() throws InterruptedException {
-
-        //Deschidem un browser
-        driver = new ChromeDriver();
-
-        //Accesam un URL
-        driver.get("https://demoqa.com/");
-
-        //Maximizam fereastra
-        driver.manage().window().maximize();
 
         WebElement formsMenu = driver.findElement(By.xpath("//h5[text()='Forms']"));
         formsMenu.click();
@@ -173,7 +163,6 @@ public class PracticeFormTest {
         WebElement closeElement = driver.findElement(By.id("closeLargeModal"));
         closeElement.click();
 
-        driver.quit();
     }
 
 }
