@@ -3,6 +3,9 @@ package tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import pages.ElementsPage;
+import pages.IndexPage;
+import pages.WebTablePage;
 import sharedData.SharedData;
 
 import java.util.List;
@@ -11,42 +14,22 @@ public class WebTableTest extends SharedData {
 
     @Test
     public void testMethod() {
-        WebElement elementsMenu = driver.findElement(By.xpath("//h5[text()='Elements']"));
-        elementsMenu.click();
+        IndexPage indexPage = new IndexPage(driver);
+        indexPage.interactWithElementsMenu();
 
-        WebElement webTablesDubMenu = driver.findElement(By.xpath("//span[text()='Web Tables']"));
-        webTablesDubMenu.click();
+        ElementsPage elementsPage = new ElementsPage(driver);
+        elementsPage.interactWithWebTableSubMenu();
 
-        WebElement addElement=driver.findElement(By.id("addNewRecordButton"));
-        addElement.click();
-
-        WebElement firstNameElement=driver.findElement(By.id("firstName"));
         String firstNameValue="Sophie";
-        firstNameElement.sendKeys(firstNameValue);
-
-        WebElement lastNameElement=driver.findElement(By.id("lastName"));
         String lastNameValue="Turner";
-        lastNameElement.sendKeys(lastNameValue);
-
-        WebElement userEmailElement=driver.findElement(By.id("userEmail"));
         String userEmailValue="sophie.turner@gmail.com";
-        userEmailElement.sendKeys(userEmailValue);
-
-        WebElement ageElement=driver.findElement(By.id("age"));
         String ageElementValue="35";
-        ageElement.sendKeys(ageElementValue);
-
-        WebElement salaryElement=driver.findElement(By.id("salary"));
         String salaryElementValue="3700";
-        salaryElement.sendKeys(salaryElementValue);
-
-        WebElement departmentElement=driver.findElement(By.id("department"));
         String departmentElementValue="HR";
-        departmentElement.sendKeys(departmentElementValue);
 
-
-        WebElement submitElement= driver.findElement(By.id("submit"));
-        submitElement.click();
+        WebTablePage webTablePage = new WebTablePage(driver);
+        webTablePage.addNewEntry(firstNameValue, lastNameValue, userEmailValue,
+                ageElementValue,salaryElementValue, departmentElementValue);
 
 //        WebElement editElement=driver.findElement(By.cssSelector("span[id='edit-record-4']"));
 //        editElement.click();

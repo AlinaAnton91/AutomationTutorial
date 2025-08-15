@@ -15,8 +15,14 @@ public class IndexPage {
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     public WebElement alertsFrameWindowMenu;
+    @FindBy(xpath = "//h5[text()='Elements']")
+    public WebElement elementsMenu;
 
     public void interactWithAlertWindowMenu(){
         alertsFrameWindowMenu.click();
+    }
+
+    public void interactWithElementsMenu(){
+        elementsMenu.click();
     }
 }
