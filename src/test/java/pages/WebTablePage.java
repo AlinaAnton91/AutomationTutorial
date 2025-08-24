@@ -29,6 +29,26 @@ public class WebTablePage {
     public WebElement departmentElement;
     @FindBy(id = "submit")
     public WebElement submitElement;
+    @FindBy(css = "span[id='edit-record-4']")
+    public WebElement editElement;
+    @FindBy(css = "input[placeholder='First Name']")
+    public WebElement editFirstNameElement;
+    @FindBy(css = "input[placeholder='Last Name']")
+    public WebElement editLastNameElement;
+    @FindBy(css = "input[placeholder='name@example.com']")
+    public WebElement editEmailAddressElement;
+    @FindBy(css = "input[placeholder='Age']")
+    public WebElement editAgeElement;
+    @FindBy(css = "input[placeholder='Salary']")
+    public WebElement editSalaryElement;
+    @FindBy(css = "input[placeholder='Department']")
+    public WebElement editDepartmentElement;
+    @FindBy(id = "submit")
+    public WebElement editSubmitElement;
+    @FindBy(css = "input[placeholder='Type to search']")
+    public WebElement searchElement;
+    @FindBy(css = "span[id='delete-record-4']")
+    public WebElement deleteButtonElement;
 
     public void addNewEntry(String firstNameValue, String lastNameValue, String userEmailValue,
                             String ageElementValue, String salaryElementValue, String departmentElementValue){
@@ -44,11 +64,35 @@ public class WebTablePage {
         submitElement.click();
     }
 
-    public void editNewEntry(){
+    public void editNewEntry(String editFirstNameValue, String editLastNameValue, String editEmailAddressValue,
+                             String editAgeValue, String editSalaryValue, String editDepartmentValue){
+        editElement.click();
+
+        editFirstNameElement.clear();
+        editFirstNameElement.sendKeys(editFirstNameValue);
+
+        editLastNameElement.clear();
+        editLastNameElement.sendKeys(editLastNameValue);
+
+        editEmailAddressElement.clear();
+        editEmailAddressElement.sendKeys(editEmailAddressValue);
+
+        editAgeElement.clear();
+        editAgeElement.sendKeys(editAgeValue);
+
+        editSalaryElement.clear();
+        editSalaryElement.sendKeys(editSalaryValue);
+
+        editDepartmentElement.clear();
+        editDepartmentElement.sendKeys(editDepartmentValue);
+
+        editSubmitElement.click();
 
     }
 
-    public void deleteNewEntry(){
+    public void deleteNewEntry(String editLastNameValue){
+        searchElement.sendKeys(editLastNameValue);
+        deleteButtonElement.click();
 
     }
 }

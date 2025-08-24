@@ -19,10 +19,12 @@ public class IndexPage {
     public WebElement elementsMenu;
 
     public void interactWithAlertWindowMenu(){
+
         alertsFrameWindowMenu.click();
     }
 
     public void interactWithElementsMenu(){
+
         elementsMenu.click();
     }
 }

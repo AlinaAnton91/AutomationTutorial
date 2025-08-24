@@ -17,6 +17,7 @@ public class AlertWindowFramePage {
     public WebElement alertsSubMenu;
 
     public void interactWithAlertsSubMenu(){
+
         alertsSubMenu.click();
     }
 }
