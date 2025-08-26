@@ -1,24 +1,28 @@
-package tests;
+package pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
-import sharedData.SharedData;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabWindowTest extends SharedData {
+public class BrowserWindowsPage {
+    public WebDriver driver;
 
-    @Test
-    public void testMethod() {
-        WebElement alertsFrameWindowMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        alertsFrameWindowMenu.click();
+    public BrowserWindowsPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
 
-        WebElement browserWindowsSubMenu = driver.findElement(By.xpath("//span[text()='Browser Windows']"));
-        browserWindowsSubMenu.click();
+    }
 
-        WebElement newTabElement = driver.findElement(By.id("tabButton"));
+    @FindBy(id = "tabButton")
+    public WebElement newTabElement;
+    @FindBy(id = "windowButton")
+    public WebElement newWindowElement;
+
+    public void interactWithNewTab () {
         newTabElement.click();
         System.out.println(driver.getCurrentUrl());
 
@@ -31,7 +35,9 @@ public class TabWindowTest extends SharedData {
         driver.switchTo().window(tabsList.get(0));
         System.out.println(driver.getCurrentUrl());
 
-        WebElement newWindowElement = driver.findElement(By.id("windowButton"));
+    }
+
+    public void interactWithNewWindow() {
         newWindowElement.click();
         System.out.println(driver.getCurrentUrl());
 
@@ -43,8 +49,8 @@ public class TabWindowTest extends SharedData {
 
         driver.switchTo().window(windowsList.get(0));
         System.out.println(driver.getCurrentUrl());
-
-
-
     }
+
+
+
 }

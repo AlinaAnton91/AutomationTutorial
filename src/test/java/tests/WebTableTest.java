@@ -43,19 +43,7 @@ public class WebTableTest extends SharedData {
 
         webTablePage.deleteNewEntry(editLastNameValue);
 
-//        Delete
-//        WebElement searchElement=driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
-//        searchElement.sendKeys(editFirstNameValue);
-//
-//        WebElement deleteButtonElement=driver.findElement(By.cssSelector("span[id='delete-record-4']"));
-//        deleteButtonElement.click();
-
-        List<WebElement> tableRowsElement = driver.findElements(By.cssSelector("div[class='rt-tr-group']"));
-
-
     }
-
-
 
 
 }

@@ -14,13 +14,13 @@ public class IndexPage {
     }
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
-    public WebElement alertsFrameWindowMenu;
+    public WebElement alertsFrameWindowsMenu;
     @FindBy(xpath = "//h5[text()='Elements']")
     public WebElement elementsMenu;
 
-    public void interactWithAlertWindowMenu(){
+    public void interactWithAlertFrameWindowsMenu(){
 
-        alertsFrameWindowMenu.click();
+        alertsFrameWindowsMenu.click();
     }
 
     public void interactWithElementsMenu(){

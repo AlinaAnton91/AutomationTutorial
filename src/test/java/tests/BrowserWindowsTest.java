@@ -1,12 +1,10 @@
 package tests;
-
 import org.testng.annotations.Test;
 import pages.AlertFrameWindowsPage;
-import pages.AlertsPage;
+import pages.BrowserWindowsPage;
 import pages.IndexPage;
 import sharedData.SharedData;
-
-public class AlertTest extends SharedData {
+public class BrowserWindowsTest extends SharedData {
 
     @Test
     public void testMethod() {
@@ -14,11 +12,11 @@ public class AlertTest extends SharedData {
         indexPage.interactWithAlertFrameWindowsMenu();
 
         AlertFrameWindowsPage alertFrameWindowsPage = new AlertFrameWindowsPage(driver);
-        alertFrameWindowsPage.interactWithAlertsSubMenu();
+        alertFrameWindowsPage.interactWithBrowserWindowsSubMenu();
 
-        AlertsPage alertsPage = new AlertsPage(driver);
-        alertsPage.dealWithAlertOk();
-        alertsPage.dealWithAlertCancel();
-        alertsPage.dealWithAlertValue("EU");
+        BrowserWindowsPage browserWindowsPage = new BrowserWindowsPage(driver);
+        browserWindowsPage.interactWithNewTab();
+        browserWindowsPage.interactWithNewWindow();
+
     }
 }
