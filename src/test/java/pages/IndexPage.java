@@ -1,5 +1,5 @@
 package pages;
-
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,14 +17,21 @@ public class IndexPage {
     public WebElement alertsFrameWindowsMenu;
     @FindBy(xpath = "//h5[text()='Elements']")
     public WebElement elementsMenu;
+    @FindBy(xpath = "//h5[text()='Forms']")
+    public WebElement formsMenu;
 
     public void interactWithAlertFrameWindowsMenu(){
-
         alertsFrameWindowsMenu.click();
+        LoggerUtility.info("The user clicks on alertFrameWindowMenu");
     }
 
     public void interactWithElementsMenu(){
-
         elementsMenu.click();
+        LoggerUtility.info("The user clicks on the Elements Menu");
+    }
+
+    public void interactWithFormsMenu(){
+        formsMenu.click();
+        LoggerUtility.info("The user clicks on the Forms Menu");
     }
 }

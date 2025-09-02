@@ -1,10 +1,9 @@
 package pages;
-
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +24,7 @@ public class BrowserWindowsPage {
     public void interactWithNewTab () {
         newTabElement.click();
         System.out.println(driver.getCurrentUrl());
+        LoggerUtility.info("The user clicks on the NewTabElement");
 
         List<String> tabsList = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabsList.get(1));
@@ -40,6 +40,7 @@ public class BrowserWindowsPage {
     public void interactWithNewWindow() {
         newWindowElement.click();
         System.out.println(driver.getCurrentUrl());
+        LoggerUtility.info("The user clicks on the NewWindowElement");
 
         List<String> windowsList = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(windowsList.get(1));
