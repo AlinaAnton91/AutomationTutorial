@@ -19,16 +19,5 @@ public class FrameTest extends SharedData {
         framePage.switchToFrame1();
         framePage.switchToParentFrame();
         framePage.switchToFrame2();
-
-//        driver.switchTo().frame("frame1");
-//        WebElement iframeMessage = driver.findElement(By.id("sampleHeading"));
-//        System.out.println(iframeMessage.getText());
-//
-//        driver.switchTo().parentFrame();
-//        driver.switchTo().frame("frame2");
-//        iframeMessage = driver.findElement(By.id("sampleHeading"));
-//        System.out.println(iframeMessage.getText());
-
-
     }
 }

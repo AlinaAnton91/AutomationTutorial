@@ -20,11 +20,15 @@ public class SharedData {
 
         //Maximizam fereastra
         driver.manage().window().maximize();
+
+        LoggerUtility.info("The browser was opened with success");
     }
 
     @AfterMethod
     public void clearEnvironment() {
-        //driver.quit();
+        driver.quit();
+
+        LoggerUtility.info("The browser was closed with success");
         LoggerUtility.finishTest(this.getClass().getSimpleName());
     }
 }

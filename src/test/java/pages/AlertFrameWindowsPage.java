@@ -4,14 +4,11 @@ import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class AlertFrameWindowsPage {
-    public WebDriver driver;
+public class AlertFrameWindowsPage extends BasePage {
 
-    public AlertFrameWindowsPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public AlertFrameWindowsPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(xpath = "//span[text()='Alerts']")

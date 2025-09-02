@@ -6,12 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class FormsPage {
-    public WebDriver driver;
+public class FormsPage extends BasePage {
 
-    public FormsPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public FormsPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(xpath = "//span[text()='Practice Form']")

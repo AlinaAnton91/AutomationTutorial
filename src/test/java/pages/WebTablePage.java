@@ -5,12 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class WebTablePage {
-    public WebDriver driver;
+public class WebTablePage extends BasePage {
 
-    public WebTablePage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public WebTablePage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(id = "addNewRecordButton")

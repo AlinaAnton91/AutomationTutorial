@@ -1,19 +1,16 @@
 package pages;
+
 import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrowserWindowsPage {
-    public WebDriver driver;
+public class BrowserWindowsPage extends BasePage {
 
     public BrowserWindowsPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
 
     @FindBy(id = "tabButton")

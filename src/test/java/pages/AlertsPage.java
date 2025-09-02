@@ -5,14 +5,11 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class AlertsPage {
-    public WebDriver driver;
+public class AlertsPage extends BasePage {
 
-    public AlertsPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public AlertsPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(id = "alertButton")

@@ -5,12 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ElementsPage {
-    public WebDriver driver;
+public class ElementsPage extends BasePage {
 
-    public ElementsPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public ElementsPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(xpath = "//span[text()='Web Tables']")
