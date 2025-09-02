@@ -8,13 +8,13 @@ public class BrowserWindowsTest extends SharedData {
 
     @Test
     public void testMethod() {
-        IndexPage indexPage = new IndexPage(driver);
+        IndexPage indexPage = new IndexPage(getDriver());
         indexPage.interactWithAlertFrameWindowsMenu();
 
-        AlertFrameWindowsPage alertFrameWindowsPage = new AlertFrameWindowsPage(driver);
+        AlertFrameWindowsPage alertFrameWindowsPage = new AlertFrameWindowsPage(getDriver());
         alertFrameWindowsPage.interactWithBrowserWindowsSubMenu();
 
-        BrowserWindowsPage browserWindowsPage = new BrowserWindowsPage(driver);
+        BrowserWindowsPage browserWindowsPage = new BrowserWindowsPage(getDriver());
         browserWindowsPage.interactWithNewTab();
         browserWindowsPage.interactWithNewWindow();
 

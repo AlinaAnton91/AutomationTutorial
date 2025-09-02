@@ -10,13 +10,13 @@ public class AlertTest extends SharedData {
 
     @Test
     public void testMethod() {
-        IndexPage indexPage = new IndexPage(driver);
+        IndexPage indexPage = new IndexPage(getDriver());
         indexPage.interactWithAlertFrameWindowsMenu();
 
-        AlertFrameWindowsPage alertFrameWindowsPage = new AlertFrameWindowsPage(driver);
+        AlertFrameWindowsPage alertFrameWindowsPage = new AlertFrameWindowsPage(getDriver());
         alertFrameWindowsPage.interactWithAlertsSubMenu();
 
-        AlertsPage alertsPage = new AlertsPage(driver);
+        AlertsPage alertsPage = new AlertsPage(getDriver());
         alertsPage.dealWithAlertOk();
         alertsPage.dealWithAlertCancel();
         alertsPage.dealWithAlertValue("EU");

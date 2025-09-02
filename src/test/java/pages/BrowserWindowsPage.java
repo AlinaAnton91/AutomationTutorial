@@ -14,9 +14,9 @@ public class BrowserWindowsPage extends BasePage {
     }
 
     @FindBy(id = "tabButton")
-    public WebElement newTabElement;
+    private WebElement newTabElement;
     @FindBy(id = "windowButton")
-    public WebElement newWindowElement;
+    private WebElement newWindowElement;
 
     public void interactWithNewTab () {
         newTabElement.click();

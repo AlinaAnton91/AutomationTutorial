@@ -13,39 +13,39 @@ public class PracticeFormPage extends BasePage {
     }
 
     @FindBy(id = "firstName")
-    public WebElement firstNameElement;
+    private WebElement firstNameElement;
     @FindBy(id = "lastName")
-    public WebElement lastNameElement;
+    private WebElement lastNameElement;
     @FindBy(id = "userEmail")
-    public WebElement emailAddressElement;
+    private WebElement emailAddressElement;
     @FindBy(css = "div[id='genterWrapper']>div>div>label[class='custom-control-label']")
-    public List<WebElement> genderList;
+    private List<WebElement> genderList;
     @FindBy(css = "input[placeholder='Mobile Number']")
-    public WebElement mobileElement;
+    private WebElement mobileElement;
     @FindBy(css = "div[id='hobbiesWrapper']>div>div>label[class='custom-control-label'] ")
-    public List<WebElement> hobbyList;
+    private List<WebElement> hobbyList;
     @FindBy(id = "subjectsInput")
-    public WebElement subjectsElement;
+    private WebElement subjectsElement;
     @FindBy(id = "uploadPicture")
-    public WebElement pictureElement;
+    private WebElement pictureElement;
     @FindBy(id = "currentAddress")
-    public WebElement currentAddressElement;
+    private WebElement currentAddressElement;
     @FindBy(xpath = "//div[text()='Select State']")
-    public WebElement stateElement;
+    private WebElement stateElement;
     @FindBy(xpath = "//div[text()='Select City']")
-    public WebElement cityElement;
+    private WebElement cityElement;
     @FindBy(id = "react-select-4-input")
-    public WebElement cityInputElement;
+    private WebElement cityInputElement;
     @FindBy(id = "react-select-3-input")
-    public WebElement stateInputElement;
+    private WebElement stateInputElement;
     @FindBy(id = "submit")
-    public WebElement submitElement;
+    private WebElement submitElement;
     @FindBy(id = "example-modal-sizes-title-lg")
-    public WebElement thankYouElement;
+    private WebElement thankYouElement;
     @FindBy(xpath = "//tbody/tr")
-    public List<WebElement> tableRowsList;
+    private List<WebElement> tableRowsList;
     @FindBy(id = "closeLargeModal")
-    public WebElement closeElement;
+    private WebElement closeElement;
 
 
 

@@ -12,9 +12,9 @@ public class FramePage extends BasePage {
     }
 
     @FindBy(id = "frame1")
-    public WebElement frame1;
+    private WebElement frame1;
     @FindBy(id = "sampleHeading")
-    public WebElement iframeMessage;
+    private WebElement iframeMessage;
 
     public void switchToFrame1() {
         driver.switchTo().frame("frame1");

@@ -12,41 +12,41 @@ public class WebTablePage extends BasePage {
     }
 
     @FindBy(id = "addNewRecordButton")
-    public WebElement addElement;
+    private WebElement addElement;
     @FindBy(id = "firstName")
-    public WebElement firstNameElement;
+    private WebElement firstNameElement;
     @FindBy(id = "lastName")
-    public WebElement lastNameElement;
+    private WebElement lastNameElement;
     @FindBy(id = "userEmail")
-    public WebElement userEmailElement;
+    private WebElement userEmailElement;
     @FindBy(id = "age")
-    public WebElement ageElement;
+    private WebElement ageElement;
     @FindBy(id = "salary")
-    public WebElement salaryElement;
+    private WebElement salaryElement;
     @FindBy(id = "department")
-    public WebElement departmentElement;
+    private WebElement departmentElement;
     @FindBy(id = "submit")
-    public WebElement submitElement;
+    private WebElement submitElement;
     @FindBy(css = "span[id='edit-record-4']")
-    public WebElement editElement;
+    private WebElement editElement;
     @FindBy(css = "input[placeholder='First Name']")
-    public WebElement editFirstNameElement;
+    private WebElement editFirstNameElement;
     @FindBy(css = "input[placeholder='Last Name']")
-    public WebElement editLastNameElement;
+    private WebElement editLastNameElement;
     @FindBy(css = "input[placeholder='name@example.com']")
-    public WebElement editEmailAddressElement;
+    private WebElement editEmailAddressElement;
     @FindBy(css = "input[placeholder='Age']")
-    public WebElement editAgeElement;
+    private WebElement editAgeElement;
     @FindBy(css = "input[placeholder='Salary']")
-    public WebElement editSalaryElement;
+    private WebElement editSalaryElement;
     @FindBy(css = "input[placeholder='Department']")
-    public WebElement editDepartmentElement;
+    private WebElement editDepartmentElement;
     @FindBy(id = "submit")
-    public WebElement editSubmitElement;
+    private WebElement editSubmitElement;
     @FindBy(css = "input[placeholder='Type to search']")
-    public WebElement searchElement;
+    private WebElement searchElement;
     @FindBy(css = "span[id='delete-record-4']")
-    public WebElement deleteButtonElement;
+    private WebElement deleteButtonElement;
 
     public void addNewEntry(String firstNameValue, String lastNameValue, String userEmailValue,
                             String ageElementValue, String salaryElementValue, String departmentElementValue){

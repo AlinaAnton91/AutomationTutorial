@@ -9,13 +9,13 @@ public class FrameTest extends SharedData {
 
     @Test
     public void testMethod() {
-        IndexPage indexPage = new IndexPage(driver);
+        IndexPage indexPage = new IndexPage(getDriver());
         indexPage.interactWithAlertFrameWindowsMenu();
 
-        AlertFrameWindowsPage alertFrameWindowsPage = new AlertFrameWindowsPage(driver);
+        AlertFrameWindowsPage alertFrameWindowsPage = new AlertFrameWindowsPage(getDriver());
         alertFrameWindowsPage.interactWithFramesSubMenu();
 
-        FramePage framePage = new FramePage(driver);
+        FramePage framePage = new FramePage(getDriver());
         framePage.switchToFrame1();
         framePage.switchToParentFrame();
         framePage.switchToFrame2();

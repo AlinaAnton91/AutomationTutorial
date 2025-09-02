@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 
 public class SharedData {
-    public WebDriver driver;
+    private WebDriver driver;
 
     @BeforeMethod
     public void prepareEnvironment() {
@@ -35,5 +35,9 @@ public class SharedData {
 
         LoggerUtility.info("The browser was closed with success");
         LoggerUtility.finishTest(this.getClass().getSimpleName());
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }

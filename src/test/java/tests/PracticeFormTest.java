@@ -18,10 +18,10 @@ public class PracticeFormTest extends SharedData {
     @Test
     public void metodaTest() {
 
-        IndexPage indexpage = new IndexPage(driver);
+        IndexPage indexpage = new IndexPage(getDriver());
         indexpage.interactWithFormsMenu();
 
-        FormsPage formsPage = new FormsPage(driver);
+        FormsPage formsPage = new FormsPage(getDriver());
         formsPage.interactWithPracticeFormSubMenu();
 
         String firstNameElementValue = "Jeremy";
@@ -39,7 +39,7 @@ public class PracticeFormTest extends SharedData {
         String cityValue = "Noida";
         String expectedThankYouValue = "Thanks for submitting the form";
 
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+        PracticeFormPage practiceFormPage = new PracticeFormPage(getDriver());
         practiceFormPage.fillEntireForm(firstNameElementValue, lastNameElementValue, emailAddressElementValue, genderValue,
                 mobileElementValue, hobbyValues, subjectsValue, picturePath, currentAddressElementValue1, currentAddressElementValue2,
                 currentAddressElementValue3, stateValue, cityValue, expectedThankYouValue);

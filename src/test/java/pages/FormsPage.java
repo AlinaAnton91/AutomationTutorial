@@ -13,7 +13,7 @@ public class FormsPage extends BasePage {
     }
 
     @FindBy(xpath = "//span[text()='Practice Form']")
-    public WebElement practiceFormSubMenu;
+    private WebElement practiceFormSubMenu;
 
     public void interactWithPracticeFormSubMenu(){
         practiceFormSubMenu.click();
