@@ -20,5 +20,6 @@ public class AlertTest extends SharedData {
         alertsPage.dealWithAlertOk();
         alertsPage.dealWithAlertCancel();
         alertsPage.dealWithAlertValue("EU");
+        alertsPage.dealWithAlertTimer();
     }
 }

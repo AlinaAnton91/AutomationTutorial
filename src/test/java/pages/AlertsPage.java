@@ -5,6 +5,10 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AlertsPage extends BasePage {
 
@@ -18,6 +22,8 @@ public class AlertsPage extends BasePage {
     public WebElement alertConfirmElement;
     @FindBy(id = "promtButton")
     public WebElement alertPromptElement;
+    @FindBy(id = "timerAlertButton")
+    public WebElement alertTimerElement;
 
     public void dealWithAlertOk(){
         alertOkElement.click();
@@ -46,5 +52,19 @@ public class AlertsPage extends BasePage {
         alertPrompt.sendKeys(value);
         alertPrompt.accept();
         LoggerUtility.info("The user fills the alert with a value: " + value);
+    }
+
+    public void dealWithAlertTimer(){
+        alertTimerElement.click();
+        LoggerUtility.info("The user clicks on Alert with timer");
+
+        //wait explicit
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.alertIsPresent());
+
+        Alert alertTimer = driver.switchTo().alert();
+        alertTimer.accept();
+        LoggerUtility.info("The user accepts the alert");
+
     }
 }

@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.time.Duration;
+
 public class SharedData {
     public WebDriver driver;
 
@@ -20,6 +22,9 @@ public class SharedData {
 
         //Maximizam fereastra
         driver.manage().window().maximize();
+
+        //Wait implicit
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         LoggerUtility.info("The browser was opened with success");
     }
